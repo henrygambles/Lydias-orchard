@@ -9,13 +9,19 @@ unpushed commits, and what hasn't been touched in a year.
 ```
 $ orchard ~/Code --sort attention
 
-  orchard  42 projects · 6.1 GB · 18 repos · updated moments ago
+orchard  /Users/henry/Code
+50 projects · 4.8 GB · 36,295 files · 18 languages · 32 repos
 
-  NAME                LANG        SIZE     ACTIVITY        FLAGS
-  legacy-api           Python      412 MB   14 months ago   ⚠ dirty, unpushed
-  scratch-worker       Go          38 MB    7 months ago    ⚠ unpushed
-  orchard              JavaScript  1 MB     moments ago
-  ...
+PROJECT       LANGUAGE      SIZE  FILES  BRANCH           STATUS            LAST ACTIVITY
+XTube         JavaScript  733 MB     12  master           1 uncommitted +1  7 months ago
+Polly         TypeScript   29 MB  1,459  master           1 uncommitted +2  1 month ago
+netbank       TypeScript  9.5 MB    194  HEAD (detached)  8 uncommitted +2  1 month ago
+  … 47 more
+
+Languages
+  C/C++       ████████████████████████  103 MB  27%
+  Config      ███████████████████████░   98 MB  26%
+  HTML        █████████████░░░░░░░░░░░   58 MB  15%
 ```
 
 ## Install
@@ -37,16 +43,16 @@ orchard [directory] [options]
 
 Options
   -s, --sort <key>     size | files | name | activity | language | attention  (default: size)
-  -r, --reverse         Reverse the sort
-  -n, --top <n>         Only list the first N projects (totals still cover all)
-  -H, --html <file>     Write an HTML report
-  -j, --json             Print JSON to stdout
-      --open             Open the HTML report when it is written
-      --no-git           Skip git inspection (faster)
-      --no-color         Disable colour
-  -q, --quiet            No progress output
-  -h, --help             Show this message
-  -v, --version          Show the version
+  -r, --reverse        Reverse the sort
+  -n, --top <n>        Only list the first N projects (totals still cover all)
+  -H, --html <file>    Write an HTML report
+  -j, --json           Print JSON to stdout
+      --open           Open the HTML report when it is written
+      --no-git         Skip git inspection (faster)
+      --no-color       Disable colour
+  -q, --quiet          No progress output
+  -h, --help           Show this message
+  -v, --version        Show the version
 ```
 
 ## Examples

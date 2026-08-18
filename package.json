@@ -1,6 +1,6 @@
 {
   "name": "orchard-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Survey a directory of projects: languages, size, git health, staleness.",
   "type": "module",
   "bin": {

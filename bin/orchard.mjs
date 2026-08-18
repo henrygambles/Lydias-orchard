@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import { execFile } from 'node:child_process'
+import { realpathSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
+import { createRequire } from 'node:module'
 import { dirname, resolve } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
@@ -11,7 +13,9 @@ import { toJSON } from '../src/render/json.mjs'
 import { renderTerminal } from '../src/render/terminal.mjs'
 import { SORT_KEYS, sortProjects, survey } from '../src/survey.mjs'
 
-const VERSION = '1.0.0'
+// Read from the manifest rather than duplicating it, so `--version` cannot
+// drift from what npm published. npm always ships package.json.
+const VERSION = createRequire(import.meta.url)('../package.json').version
 
 const USAGE = `orchard — survey a directory of projects
 
@@ -150,8 +154,22 @@ function fail(message) {
   return 1
 }
 
+function invokedDirectly() {
+  if (!process.argv[1]) return false
+  let entry = resolve(process.argv[1])
+  try {
+    entry = realpathSync(entry)
+  } catch {
+    // Entry point vanished mid-run; the unresolved path is the best we have.
+  }
+  return entry === fileURLToPath(import.meta.url)
+}
+
 // Only run when invoked as a program, so tests can import the module.
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+// argv[1] is whatever path the shell used, which for a global or npx install is
+// a symlink into node_modules/.bin; import.meta.url is always the real path, so
+// the two only line up once the link is followed.
+if (invokedDirectly()) {
   main(process.argv.slice(2))
     .then((code) => {
       process.exitCode = code
