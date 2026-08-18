@@ -1,0 +1,39 @@
+{
+  "name": "@lydia/orchard",
+  "version": "1.0.0",
+  "description": "Survey a directory of projects: languages, size, git health, staleness.",
+  "type": "module",
+  "bin": { "orchard": "./bin/orchard.mjs" },
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "start": "node bin/orchard.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "cli",
+    "git",
+    "developer-tools",
+    "monorepo",
+    "survey",
+    "workspace"
+  ],
+  "author": "Henry Gambles",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrygambles/Lydias-orchard.git"
+  },
+  "homepage": "https://github.com/henrygambles/Lydias-orchard#readme",
+  "bugs": {
+    "url": "https://github.com/henrygambles/Lydias-orchard/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+*.html
+!test/fixtures/**/*.html
+.DS_Store
