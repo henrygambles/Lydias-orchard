@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Survey a directory of projects: languages, size, git health, staleness.",
   "type": "module",
-  "bin": { "orchard": "./bin/orchard.mjs" },
-  "engines": { "node": ">=20" },
+  "bin": {
+    "orchard": "bin/orchard.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "node --test \"test/**/*.test.mjs\"",
     "start": "node bin/orchard.mjs"
