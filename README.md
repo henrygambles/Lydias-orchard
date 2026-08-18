@@ -21,13 +21,13 @@ $ orchard ~/Code --sort attention
 ## Install
 
 ```
-npx @lydia/orchard ~/Code
+npx orchard-cli ~/Code
 ```
 
 or install it globally:
 
 ```
-npm install -g @lydia/orchard
+npm install -g orchard-cli
 ```
 
 ## Usage

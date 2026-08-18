@@ -1,5 +1,5 @@
 {
-  "name": "@lydia/orchard",
+  "name": "orchard-cli",
   "version": "1.0.0",
   "description": "Survey a directory of projects: languages, size, git health, staleness.",
   "type": "module",
