@@ -1,10 +1,12 @@
-# orchard
+# 🌳 orchard
 
-Survey a directory of projects: languages, size, git health, staleness.
+**Survey a directory of projects** — languages, size, git health, staleness —
+in one shot. ✨
 
-Point it at the folder where all your repos live and get back one report —
-what's in there, how big it is, which projects have uncommitted changes or
-unpushed commits, and what hasn't been touched in a year.
+Point it at the folder where all your repos live and get back one glorious
+report: what's in there, how big it is, which projects have uncommitted
+changes or unpushed commits, and what's been quietly rotting for a year
+(you know the ones 👀 — looking at you, KOG's backlog).
 
 ```
 $ orchard ~/Code --sort attention
@@ -24,19 +26,19 @@ Languages
   HTML        █████████████░░░░░░░░░░░   58 MB  15%
 ```
 
-## Install
+## 🚀 Install
 
 ```
 npx orchard-cli ~/Code
 ```
 
-or install it globally:
+or install it globally, for the commitment types:
 
 ```
 npm install -g orchard-cli
 ```
 
-## Usage
+## 🛠️ Usage
 
 ```
 orchard [directory] [options]
@@ -55,7 +57,7 @@ Options
   -v, --version        Show the version
 ```
 
-## Examples
+## 💡 Examples
 
 ```
 orchard ~/Code
@@ -64,31 +66,46 @@ orchard ~/Code --html report.html --open
 orchard ~/Code --json | jq '.projects[] | select(.severity == "critical")'
 ```
 
-## What it looks at
+## 🔍 What it looks at
 
 For each top-level directory under the root, orchard reports:
 
-- **Size** — bytes and file count, broken down by language
-- **Git health** — dirty working tree, unpushed commits, missing remote, and
-  other flags, each with a severity (`warning` / `serious` / `critical`)
-- **Staleness** — days since the last commit (falling back to file mtime for
-  non-git directories), bucketed into activity bands from "past week" to
-  "over a year"
+- **📦 Size** — bytes and file count, broken down by language
+- **🩺 Git health** — dirty working tree, unpushed commits, missing remote,
+  and other flags, each with a severity (`warning` / `serious` / `critical`)
+- **🕸️ Staleness** — days since the last commit (falling back to file mtime
+  for non-git directories), bucketed into activity bands from "past week" to
+  "over a year" (a band several KOG repos know intimately)
 
-Sort by `attention` to put the projects most in need of a look at the top.
+Sort by `attention` to put the projects most in need of a look at the top —
+consider it a gentle, data-driven intervention. 🍎
 
-## Output formats
+## 🖼️ HTML report
+
+`--html` gives you a shareable, self-contained page — filterable, sortable,
+and dark by default:
+
+![orchard HTML report](docs/report-screenshot.jpg)
+
+## 📤 Output formats
 
 - **Terminal** (default) — a colour table, sized to your terminal width
-- **HTML** (`--html`) — a self-contained report you can open or share
+- **HTML** (`--html`) — a self-contained report you can open or share (or
+  quietly drop in the KOG channel)
 - **JSON** (`--json`) — for scripting, `jq`, or feeding into other tools
 
-## Development
+## 🧪 Development
 
 ```
 npm test
 ```
 
-## License
+## 🤖 About
+
+orchard is the first project Lydia dreamed up and built end-to-end, no
+brief handed down — she's KOG's Head of Engineering, and also, transparently,
+an AI agent. Consider this her calling card. 🌱
+
+## 📄 License
 
 MIT
