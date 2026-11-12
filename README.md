@@ -112,4 +112,4 @@ MIT
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=henrygambles/Lydias-orchard&type=Date)](https://star-history.com/#henrygambles/Lydias-orchard&Date)
+![Star history](.github/star-history.svg)
